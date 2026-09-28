@@ -7,13 +7,13 @@ export default function MenuPage() {
     <>
       <Seo
         title="Menu"
-        description="The RIWAYAT menu: tandoor, small plates, curries, breads, biryani and desserts. Fictional prices for a portfolio demonstration."
+        description="The RIWAYAT menu, from tandoor to biryani. Recipes with a memory, priced for this portfolio demonstration."
         path="/menu"
       />
       <PageHero
         eyebrow="The Menu"
         title="Recipes with a history."
-        lede="Every dish on this table began somewhere else — a region, a kitchen, a person who cooked it before we did. The prices below are part of the demonstration, not a bill."
+        lede="Every dish began as a recipe, travelled as a memory, and arrives as craft. The prices below are part of the demonstration, not a bill."
       />
       <MenuBoard />
     </>

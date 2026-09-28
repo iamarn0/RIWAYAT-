@@ -3,7 +3,7 @@ export function unsplash(photoId, width = 1600) {
 }
 
 export const photos = {
-  hero: unsplash("photo-1505253758473-96b7015fcd40", 2000),
+  hero: unsplash("photo-1505253758473-96b7015fcd40", 1600),
   skillet: unsplash("photo-1505253758473-96b7015fcd40", 1400),
   biryani: unsplash("photo-1589302168068-964664d93dc0", 1600),
   wood: unsplash("photo-1712757248842-04f6e3844374", 1600),
@@ -18,4 +18,10 @@ export const photos = {
   spiceSpoons: unsplash("photo-1509358271058-acd22cc93898", 1400),
   stall: unsplash("photo-1665206221363-568ea2f7b195", 1400),
   amber: unsplash("photo-1599661046289-e31897846e41", 1600),
+  notebook: unsplash("photo-1516414447565-b14be0adf13e", 1600),
+  writing: unsplash("photo-1455390582262-044cdead277a", 1400),
+  guestAnanya: unsplash("photo-1534528741775-53994a69daeb", 800),
+  guestKabir: unsplash("photo-1506794778202-cad84cf45f1d", 800),
+  guestLeela: unsplash("photo-1531123897727-8f129e1688ce", 800),
+  guestRohan: unsplash("photo-1507003211169-0a1dd7228f2d", 800),
 };

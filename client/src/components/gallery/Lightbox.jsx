@@ -25,14 +25,15 @@ export default function Lightbox({ items, index, onClose, onChange }) {
   const item = items[index];
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-charcoal/92 p-4 sm:p-8">
+    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-charcoal/92 p-4 sm:p-8" onClick={onClose}>
       <div
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
-        aria-label={item.caption}
+        aria-labelledby="lightbox-caption"
         tabIndex={-1}
         className="relative flex w-full max-w-5xl flex-col"
+        onClick={(event) => event.stopPropagation()}
       >
         <div className="mb-3 flex items-center justify-between text-ivory">
           <p className="text-[12px] uppercase tracking-[0.18em] text-sand">
@@ -55,7 +56,7 @@ export default function Lightbox({ items, index, onClose, onChange }) {
             <ChevronLeft aria-hidden="true" />
             <span className="sr-only">Previous image</span>
           </button>
-          <p className="text-center font-display text-2xl">{item.caption}</p>
+          <p id="lightbox-caption" className="text-center font-display text-2xl">{item.caption}</p>
           <button
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center border border-ivory/30"

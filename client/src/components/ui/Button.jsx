@@ -16,7 +16,7 @@ export default function Button({
   type = "button",
   ...props
 }) {
-  const classes = `inline-flex items-center justify-center px-6 py-3 text-[11px] font-medium uppercase tracking-[0.2em] transition-colors duration-300 ${variants[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center px-6 py-3 text-center text-[11px] font-medium uppercase tracking-[0.2em] transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60 ${variants[variant]} ${className}`;
 
   if (to) {
     return (

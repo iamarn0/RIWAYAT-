@@ -11,13 +11,13 @@ export default function ContactPage() {
     <>
       <Seo
         title="Contact"
-        description="Visit the fictional dining room of RIWAYAT at 47 Heritage Avenue, Kolkata. Hours, a map placeholder, and a contact form."
+        description="Find the fictional dining room of RIWAYAT at 47 Heritage Avenue, Kolkata. Hours, a map placeholder, and a note to the house."
         path="/contact"
       />
       <PageHero
         eyebrow="Contact"
         title="The house keeps a light on."
-        lede="RIWAYAT, the address and the telephone number are fictional. They exist so this portfolio can show how a guest would find the door."
+        lede="The dining room is the last page of the story. RIWAYAT, the address and the telephone are fictional — written so a guest can still find the door."
       />
       <section className="py-14 md:py-20">
         <Container className="grid gap-12 lg:grid-cols-12">

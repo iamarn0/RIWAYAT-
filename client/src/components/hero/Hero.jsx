@@ -29,13 +29,14 @@ export default function Hero() {
           src={photos.hero}
           alt="A steel pan of spiced meat and rice with torn naan on a dark tray"
           priority
+          sizes="100vw"
           className="h-full w-full object-cover"
         />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-charcoal/75 via-charcoal/25 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/55 to-transparent" />
 
-      <div className="relative mx-auto flex min-h-[100svh] max-w-[1400px] flex-col justify-end px-5 pt-28 pb-20 sm:px-8 lg:px-12 lg:pb-24">
+      <div className="relative mx-auto flex min-h-[100svh] w-full min-w-0 max-w-[1400px] flex-col justify-end px-4 pt-28 pb-16 sm:px-8 sm:pb-20 lg:px-12 lg:pb-24">
         <motion.p className="text-[11px] uppercase tracking-[0.34em] text-sand" {...rise(0.15)}>
           RIWAYAT
         </motion.p>
@@ -55,10 +56,17 @@ export default function Hero() {
             finds its table.
           </motion.span>
         </h1>
-        <motion.p className="mt-6 max-w-md text-base leading-relaxed text-ivory/85 sm:text-lg" {...rise(0.45)}>
-          A contemporary Indian dining experience rooted in recipes, rituals and stories passed through generations.
+        <motion.div className="mt-8 min-w-0 max-w-xl border-l border-brass pl-5 sm:mt-10" {...rise(0.42)}>
+          <p className="font-display text-[clamp(1.25rem,2.3vw,1.85rem)] leading-snug text-ivory italic">
+            <span className="block">Recipes written in fading notebooks.</span>
+            <span className="mt-2 block">Stories carried across generations.</span>
+            <span className="mt-2 block">A table inspired by India.</span>
+          </p>
+        </motion.div>
+        <motion.p className="mt-6 min-w-0 max-w-lg text-base leading-relaxed text-ivory/80 sm:mt-8 sm:text-lg" {...rise(0.52)}>
+          A living archive of Indian culinary heritage — recipe, memory, tradition and craft — served as a dining experience.
         </motion.p>
-        <motion.div className="mt-8 flex flex-col gap-3 sm:flex-row" {...rise(0.58)}>
+        <motion.div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row" {...rise(0.62)}>
           <Button to="/reservations" variant="light">
             Reserve a Table
           </Button>
@@ -68,7 +76,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <div className="absolute right-5 bottom-6 flex flex-col items-center gap-3 text-ivory/80 sm:right-8">
+      <div className="absolute right-8 bottom-8 hidden flex-col items-center gap-3 text-ivory/80 sm:flex">
         <span className="text-[10px] uppercase tracking-[0.28em]">Scroll</span>
         <span className="relative h-12 w-px overflow-hidden bg-ivory/30" aria-hidden="true">
           <span className="scroll-line absolute inset-x-0 top-0 h-4 bg-ivory" />

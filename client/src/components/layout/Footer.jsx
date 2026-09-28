@@ -10,6 +10,7 @@ export default function Footer() {
         <div className="lg:col-span-1">
           <p className="font-display text-3xl tracking-[0.22em]">RIWAYAT</p>
           <p className="mt-4 max-w-xs font-display text-2xl leading-snug text-sand italic">Where tradition finds its table.</p>
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-ivory/70">Recipe, memory, tradition, craft — then the table.</p>
         </div>
 
         <div>

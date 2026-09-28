@@ -6,7 +6,7 @@ export default function Field({ id, label, error, children }) {
       </label>
       {children}
       {error ? (
-        <p id={`${id}-error`} className="mt-2 text-sm text-clay">
+        <p id={`${id}-error`} role="alert" className="mt-2 text-sm text-clay">
           {error}
         </p>
       ) : null}

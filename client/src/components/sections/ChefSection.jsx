@@ -15,7 +15,7 @@ export default function ChefSection() {
           </div>
         </Reveal>
         <Reveal className="lg:col-span-6 lg:col-start-7" delay={0.08}>
-          <p className="eyebrow">05 — The Kitchen</p>
+          <p className="eyebrow">07 — The Hands</p>
           <h2 id="chef-heading" className="display mt-4 text-[clamp(2.6rem,5vw,4.4rem)]">
             The Hands Behind the Tradition
           </h2>

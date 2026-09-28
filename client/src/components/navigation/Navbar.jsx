@@ -16,9 +16,14 @@ function linkClass(isActive, onDark) {
 
 export default function Navbar() {
   const { pathname } = useLocation();
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(() => window.scrollY > 12);
   const [open, setOpen] = useState(false);
+  const [menuPath, setMenuPath] = useState(pathname);
   const drawerRef = useRef(null);
+  if (menuPath !== pathname) {
+    setMenuPath(pathname);
+    setOpen(false);
+  }
   const reduce = useReducedMotion();
   const onHero = pathname === "/" && !scrolled && !open;
 
@@ -27,14 +32,9 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     if (!open) return undefined;
@@ -47,8 +47,8 @@ export default function Navbar() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${onHero ? "bg-transparent" : "border-b border-sand/70 bg-ivory/95 backdrop-blur-sm"}`}>
-      <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between gap-4 px-5 sm:px-8 lg:px-12">
-        <Link to="/" className={`shrink-0 font-display text-[1.25rem] tracking-[0.18em] sm:text-[1.35rem] sm:tracking-[0.28em] ${onHero ? "text-ivory" : "text-charcoal"}`} aria-label="RIWAYAT, home">
+      <div className="mx-auto flex h-20 w-full min-w-0 max-w-[1400px] items-center justify-between gap-3 px-4 sm:gap-4 sm:px-8 lg:px-12">
+        <Link to="/" className={`min-w-0 font-display text-[1.15rem] tracking-[0.12em] sm:text-[1.35rem] sm:tracking-[0.28em] ${onHero ? "text-ivory" : "text-charcoal"}`} aria-label="RIWAYAT, home">
           RIWAYAT
         </Link>
 

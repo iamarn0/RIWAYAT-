@@ -14,7 +14,7 @@ export default function SignatureDishes() {
     <section className="py-20 md:py-28" aria-labelledby="kitchen-heading">
       <Container>
         <Reveal>
-          <p className="eyebrow">03 — The Kitchen</p>
+          <p className="eyebrow">04 — The Kitchen</p>
           <h2 id="kitchen-heading" className="display mt-4 text-[clamp(2.6rem,5vw,4.6rem)]">
             From Our Kitchen
           </h2>

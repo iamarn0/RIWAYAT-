@@ -12,13 +12,13 @@ export default function AboutPage() {
     <>
       <Seo
         title="Our Story"
-        description="The philosophy of RIWAYAT: tradition is not repetition. It is memory, carried forward. A fictional restaurant story for a portfolio."
+        description="The philosophy of RIWAYAT: a recipe becomes memory, tradition and craft, then a meal. A fictional restaurant story for a portfolio."
         path="/about"
       />
       <PageHero
         eyebrow="Our Philosophy"
         title="Tradition is not repetition. It is memory, carried forward."
-        lede="RIWAYAT is not simply an Indian restaurant. It is a celebration of the traditions behind Indian food — recipe, memory, craft, and the meal that holds them."
+        lede="RIWAYAT is not simply an Indian restaurant. Recipe becomes memory, memory becomes tradition, tradition becomes craft, and craft becomes the dining experience."
       />
 
       <section className="py-16 md:py-24" aria-labelledby="philosophy-heading">

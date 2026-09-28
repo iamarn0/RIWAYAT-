@@ -7,7 +7,7 @@ export default function HeritageStory() {
     <section className="bg-forest py-20 text-ivory md:py-28" aria-labelledby="story-heading">
       <Container>
         <Reveal>
-          <p className="text-[11px] uppercase tracking-[0.28em] text-sand">02 — A fictional telling</p>
+          <p className="text-[11px] uppercase tracking-[0.28em] text-sand">03 — A fictional telling</p>
           <h2 id="story-heading" className="display mt-4 max-w-3xl text-[clamp(2.6rem,5vw,4.6rem)]">
             The Story Behind the Table
           </h2>

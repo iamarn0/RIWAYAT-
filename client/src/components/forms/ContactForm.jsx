@@ -24,6 +24,9 @@ export default function ContactForm() {
     setMessage("");
     if (Object.keys(nextErrors).length) {
       setStatus("error");
+      const first = Object.keys(nextErrors)[0];
+      const field = document.querySelector(`#contact-form [name="${first}"]`);
+      if (field instanceof HTMLElement) field.focus();
       return;
     }
 
@@ -51,7 +54,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="grid gap-6">
+    <form id="contact-form" onSubmit={onSubmit} noValidate className="grid gap-6">
       {message ? (
         <p role="alert" className="border border-terracotta/40 bg-terracotta/10 px-4 py-3 text-sm">
           {message}

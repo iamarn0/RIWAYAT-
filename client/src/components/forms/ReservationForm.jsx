@@ -17,7 +17,14 @@ const initial = {
   requests: "",
 };
 
-export default function ReservationForm() {
+const occasionForExperience = {
+  "Family Celebrations": "Family gathering",
+  "Corporate Gatherings": "Business",
+  "Private Dining": "Celebration",
+  "Chef's Tasting Experience": "Just dinner",
+};
+
+export default function ReservationForm({ experience = "" }) {
   const [values, setValues] = useState(initial);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
@@ -30,11 +37,19 @@ export default function ReservationForm() {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    const { errors: nextErrors, value } = validateReservation(values);
+    const note = experience ? `Experience: ${experience}` : "";
+    const requests = [note, values.requests].filter(Boolean).join("\n");
+    const { errors: nextErrors, value } = validateReservation({
+      ...values,
+      occasion: values.occasion || occasionForExperience[experience] || "",
+      requests,
+    });
     setErrors(nextErrors);
     setMessage("");
     if (Object.keys(nextErrors).length) {
       setStatus("error");
+      const first = Object.keys(nextErrors)[0];
+      document.getElementById(first)?.focus();
       return;
     }
 
@@ -54,6 +69,7 @@ export default function ReservationForm() {
       <div role="status" className="border border-sand bg-ivory-deep/50 px-6 py-10">
         <p className="font-display text-5xl">Thank you.</p>
         <p className="mt-4 max-w-md text-lg">Your reservation request has been received. Our team will contact you shortly to confirm your table.</p>
+        {experience ? <p className="mt-3 font-display text-2xl">{experience}</p> : null}
         <p className="mt-4 text-sm text-brown">This is a portfolio demonstration. No real restaurant will call.</p>
         <Button className="mt-8" onClick={() => { setValues(initial); setStatus("idle"); }}>
           Make another request
@@ -64,6 +80,12 @@ export default function ReservationForm() {
 
   return (
     <form onSubmit={onSubmit} noValidate className="grid gap-6">
+      {experience ? (
+        <p className="border border-brass/50 bg-ivory-deep/60 px-4 py-4">
+          <span className="text-[11px] uppercase tracking-[0.16em] text-brown">Experience</span>
+          <span className="mt-1 block font-display text-3xl">{experience}</span>
+        </p>
+      ) : null}
       {message ? (
         <p role="alert" className="border border-terracotta/40 bg-terracotta/10 px-4 py-3 text-sm">
           {message}

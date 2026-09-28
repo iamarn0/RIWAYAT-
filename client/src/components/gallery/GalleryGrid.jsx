@@ -25,7 +25,7 @@ export default function GalleryGrid() {
                   key={name}
                   type="button"
                   aria-pressed={selected}
-                  className={`shrink-0 border px-3 py-2 text-[11px] uppercase tracking-[0.14em] ${selected ? "border-charcoal bg-charcoal text-ivory" : "border-sand text-brown"}`}
+                  className={`inline-flex min-h-11 shrink-0 items-center border px-3 py-2 text-[11px] uppercase tracking-[0.14em] ${selected ? "border-charcoal bg-charcoal text-ivory" : "border-sand text-brown"}`}
                   onClick={() => {
                     setCategory(name);
                     setIndex(null);
@@ -41,10 +41,10 @@ export default function GalleryGrid() {
         <div className="mt-10 columns-1 gap-4 sm:columns-2 lg:columns-3">
           {items.map((item, itemIndex) => (
             <figure key={item.id} className="mb-4 break-inside-avoid">
-              <button type="button" className="group block w-full overflow-hidden bg-sand text-left" onClick={() => setIndex(itemIndex)}>
+              <button type="button" className="group block w-full overflow-hidden bg-sand text-left" aria-haspopup="dialog" aria-label={`Open ${item.caption} in the gallery`} onClick={() => setIndex(itemIndex)}>
                 <Photo
                   src={item.src}
-                  alt={item.alt}
+                  alt=""
                   className={`w-full object-cover motion-safe:transition motion-safe:duration-700 motion-safe:group-hover:scale-[1.04] ${item.tall ? "aspect-[3/4]" : "aspect-[4/3]"}`}
                 />
               </button>

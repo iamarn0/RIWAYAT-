@@ -64,6 +64,7 @@ export const regions = [
     id: "awadh",
     name: "Awadh",
     line: "Slow dum, patient kebabs, and the perfume of a royal kitchen.",
+    flavour: "Saffron, kewra and a ghee-soft spice that prefers perfume to heat.",
     image: photos.biryani,
     imageAlt: "Chicken biryani with mint, cucumber and small bowls of sauce",
     dishIds: ["galouti-kebab", "lucknowi-biryani", "sheermal"],
@@ -72,6 +73,7 @@ export const regions = [
     id: "punjab",
     name: "Punjab",
     line: "Tandoor bread, black lentils, and gravies cooked without hurry.",
+    flavour: "Charcoal, butter and the comfort of a gravy meant to be shared.",
     image: photos.kadhai,
     imageAlt: "Vegetable curries and rice in steel bowls",
     dishIds: ["dal-riwayat", "butter-chicken", "amritsari-fish"],
@@ -80,6 +82,7 @@ export const regions = [
     id: "kashmir",
     name: "Kashmir",
     line: "Fennel, dry ginger, and a lamb curry that smells of the valley.",
+    flavour: "Fennel, dry ginger and a red that should not taste of tomato.",
     image: photos.skillet,
     imageAlt: "A dark pan of spiced meat and rice with naan",
     dishIds: ["rogan-josh", "kahwa", "saffron-pulao"],
@@ -88,6 +91,7 @@ export const regions = [
     id: "bengal",
     name: "Bengal",
     line: "Mustard oil, poppy seed, and a meal that ends in milk and saffron.",
+    flavour: "Mustard oil, poppy seed and a sweet note that closes the meal.",
     image: photos.puri,
     imageAlt: "Puffed bread frying in a steel pan",
     dishIds: ["kosha-mangsho", "aloo-posto", "rasmalai"],
@@ -96,6 +100,7 @@ export const regions = [
     id: "rajasthan",
     name: "Rajasthan",
     line: "Desert chilli, gram flour breads, and a heat that stays dry.",
+    flavour: "Dried red chilli, ghee and a heat that stays dry on the tongue.",
     image: photos.amber,
     imageAlt: "Sandstone walls and an arched gate at Amber Fort, Jaipur",
     dishIds: ["laal-maas", "missi-roti", "jaljeera"],
@@ -104,6 +109,7 @@ export const regions = [
     id: "kerala",
     name: "Kerala",
     line: "Coconut, coastal fish, and spice that tastes of the backwaters.",
+    flavour: "Coconut, curry leaf and a coastal sourness under the spice.",
     image: photos.bananaLeaf,
     imageAlt: "A meal of rice, curry and breads on a banana leaf",
     dishIds: ["malabar-fish", "tandoori-prawns", "filter-coffee"],
@@ -112,6 +118,7 @@ export const regions = [
     id: "hyderabad",
     name: "Hyderabad",
     line: "Layered biryani, fried onion, and a salan made to be shared.",
+    flavour: "Fried onion, mint and saffron, built in layers and left sealed.",
     image: photos.brassRice,
     imageAlt: "Spiced rice in small brass bowls",
     dishIds: ["chicken-biryani", "mirchi-ka-salan", "vegetable-biryani"],
@@ -171,42 +178,108 @@ export const traditions = [
 ];
 
 export const ingredients = [
-  { name: "Cardamom", note: "Green pods, cracked only when the gravy is nearly done." },
-  { name: "Saffron", note: "A few strands for milk, bread and the occasional pulao." },
-  { name: "Black Cardamom", note: "Smoke and camphor, used where the dish can hold it." },
-  { name: "Cumin", note: "Toasted whole, or ground the same morning." },
-  { name: "Clove", note: "One or two. Enough to be felt, never enough to numb." },
-  { name: "Cinnamon", note: "A quiet sweetness in meat gravies and in kahwa." },
-  { name: "Mustard", note: "Oil and seed, especially when the recipe comes from Bengal." },
-  { name: "Fenugreek", note: "Dried leaves, crushed between the palms at the end." },
-  { name: "Coriander", note: "Seed for the masala, leaf for the last scatter of green." },
-  { name: "Turmeric", note: "Earth and colour, used as a spice rather than a dye." },
+  {
+    name: "Cardamom",
+    note: "Green pods, cracked only when the gravy is nearly done.",
+    origin: "Cultivated along the Western Ghats and traded into kitchens across India.",
+    flavour: "Cool, floral, with a clean menthol edge.",
+    use: "Cracked into gravies at the end, and steeped in milk for sweets.",
+  },
+  {
+    name: "Saffron",
+    note: "A few strands for milk, bread and the occasional pulao.",
+    origin: "Grown in Kashmir, and treated here as a rare thread rather than a colour.",
+    flavour: "Honeyed, floral, and faintly metallic.",
+    use: "Bloomed in warm milk for breads, desserts and a restrained pulao.",
+  },
+  {
+    name: "Turmeric",
+    note: "Earth and colour, used as a spice rather than a dye.",
+    origin: "A rhizome of the south and the Deccan, dried and ground close to cooking.",
+    flavour: "Earthy, bitter, and warm.",
+    use: "A foundation for gravies and marinades, never a substitute for other spice.",
+  },
+  {
+    name: "Fenugreek",
+    note: "Dried leaves, crushed between the palms at the end.",
+    origin: "Leaves and seeds from the north and west, used with a light hand.",
+    flavour: "Bitter, maple-like, and unmistakably savoury.",
+    use: "Crushed over a finished gravy, or toasted as seed in a tadka.",
+  },
+  {
+    name: "Black Cardamom",
+    note: "Smoke and camphor, used where the dish can hold it.",
+    origin: "Dried over fire in the eastern Himalaya, which is why it tastes of smoke.",
+    flavour: "Camphor, resin and a cold smoke.",
+    use: "One pod in long meat gravies and in some biryanis. Removed before serving.",
+  },
+  {
+    name: "Coriander",
+    note: "Seed for the masala, leaf for the last scatter of green.",
+    origin: "Seed from the spice routes of the west; leaf from the morning market.",
+    flavour: "Citrus peel and warmth in the seed. Bright and green in the leaf.",
+    use: "Ground into the masala, or scattered raw so the dish still smells alive.",
+  },
+  {
+    name: "Mustard",
+    note: "Oil and seed, especially when the recipe comes from Bengal.",
+    origin: "Oil pressed for the east; seed used whole, cracked or as a paste.",
+    flavour: "Pungent, sharp, and slightly sweet once the seed has popped.",
+    use: "The fat for a Bengali gravy, and the first sound of a tadka.",
+  },
+  {
+    name: "Clove",
+    note: "One or two. Enough to be felt, never enough to numb.",
+    origin: "A bud traded into Indian cooking, used sparingly in whole form.",
+    flavour: "Sweet, numbing and woody.",
+    use: "One or two in a meat gravy or a pot of rice. Never a handful.",
+  },
+  {
+    name: "Cinnamon",
+    note: "A quiet sweetness in meat gravies and in kahwa.",
+    origin: "Bark used in both savoury potli and in Kashmiri kahwa.",
+    flavour: "Sweet wood, warm rather than sharp.",
+    use: "A stick in slow gravies, and a quieter note in tea.",
+  },
+  {
+    name: "Cumin",
+    note: "Toasted whole, or ground the same morning.",
+    origin: "A seed of the north-west, toasted so it smells of itself.",
+    flavour: "Earthy, nutty, and a little bitter when it has caught the pan.",
+    use: "Whole in tadka, or ground the morning it is cooked.",
+  },
 ];
 
 export const techniques = [
   {
     name: "Dum Cooking",
-    text: "A sealed pot and low heat. Steam finishes what the hand began, which is why biryani and galouti are never rushed.",
+    text: "A sealed pot and low heat. Steam finishes what the hand began.",
+    detail: "The lid is closed and left alone. Biryani and galouti are done when the pot says so, which is why they are never rushed.",
   },
   {
     name: "Tandoor",
-    text: "Clay, coal and a short, fierce heat. Breads blister. Marinades tighten. The smoke is an ingredient.",
+    text: "Clay, coal and a short, fierce heat.",
+    detail: "Breads blister. Marinades tighten. The smoke stays on the bread, and is treated as an ingredient.",
   },
   {
     name: "Bhuna",
-    text: "Onions, meat and spice cooked until the moisture leaves and the gravy starts to shine.",
+    text: "Cooked until the moisture leaves and the gravy shines.",
+    detail: "Onion, meat and spice are worked in the pan until the oil separates. The colour deepens. Water is not added to hurry it.",
   },
   {
     name: "Tadka",
-    text: "Fat brought to the right temperature, then spice. The sound tells you when it is ready.",
+    text: "Fat, then spice. The sound tells you when it is ready.",
+    detail: "The fat has to be hot enough for the seed to crack, and not so hot that it burns. That crack is the recipe.",
   },
   {
-    name: "Hand-ground Masala",
-    text: "Small batches, ground on stone or in a mortar, so the spice still smells like itself.",
+    name: "Hand-Ground Masala",
+    text: "Small batches, so the spice still smells like itself.",
+    detail: "Stone or mortar, not a jar that has been open for a month. The kitchen should still smell of what was ground that morning.",
   },
   {
     name: "Slow Cooking",
-    text: "Dal, halwa and kosha are clocks. They are done when the texture changes, not when a timer ends.",
+    text: "Dal, halwa and kosha are clocks.",
+    detail: "They are finished when the texture changes — when the lentil yields, when the halwa leaves the pan — not when a timer ends.",
   },
 ];
 
@@ -246,3 +319,134 @@ export const about = {
     "You are seated as if the table was kept. Water arrives. The first bread is hot. The meal is allowed to take the time it was written for.",
   ],
 };
+
+export const recipeArchive = {
+  kicker: "Written for this house",
+  lede: "In the story of RIWAYAT, the recipes live in a cloth-bound book. The handwriting changes. The attention does not. Nothing on this page is a historical record — it is how the kitchen explains itself.",
+  margin: "Less chilli. More time. Write it that way.",
+  pages: [
+    {
+      page: "12",
+      title: "Galouti",
+      region: "Awadh",
+      excerpt: "Mince until the grain disappears. Sear in ghee. Do not press the kebab — it should yield to the bread.",
+    },
+    {
+      page: "27",
+      title: "Kosha",
+      region: "Bengal",
+      excerpt: "Mustard oil, and patience. The gravy is finished when it leaves the side of the pan and the oil returns.",
+    },
+    {
+      page: "41",
+      title: "Dal",
+      region: "Punjab",
+      excerpt: "Black lentils overnight. A tempering of garlic and chilli at the last minute, never at the beginning.",
+    },
+  ],
+  memories: [
+    {
+      label: "Memory",
+      text: "A winter afternoon. Carrots for halwa, cardamom in the milk, and someone told to keep stirring.",
+    },
+    {
+      label: "Tradition",
+      text: "The same dum, taught by standing beside the pot rather than by reading the page aloud.",
+    },
+    {
+      label: "Craft",
+      text: "Masala ground that morning. The stone still smells of it when the first guests are seated.",
+    },
+  ],
+};
+
+export const signatureExperiences = [
+  {
+    name: "Chef's Tasting Menu",
+    detail: "7-course curated experience",
+    price: "₹4,200 per guest",
+    text: "A sequence written for the evening: a kebab, a coastal note, dum rice, and a sweet that closes the book. The kitchen chooses the order. The table keeps the conversation.",
+  },
+  {
+    name: "Regional Discovery Menu",
+    detail: "A guided exploration of India's culinary regions",
+    price: "₹3,500 per guest",
+    text: "One table, several kitchens. Awadh, Bengal, the coast — served as a path through the archive, not as a list of dishes.",
+  },
+  {
+    name: "Celebration Dining",
+    detail: "Custom experience for special occasions",
+    price: "Custom pricing",
+    text: "A room set for the reason you came. The menu is written with you, then cooked as if the notebook had been given a new page.",
+  },
+];
+
+export const diningExperiences = [
+  {
+    id: "private-dining",
+    name: "Private Dining",
+    guests: "6–10 guests",
+    description: "A room of your own, and a menu that does not have to explain itself to the next table.",
+    image: photos.thali,
+    imageAlt: "A steel thali of small bowls, bread and rice",
+  },
+  {
+    id: "chefs-tasting",
+    name: "Chef's Tasting Experience",
+    guests: "2–6 guests",
+    description: "Seven courses, paced by the kitchen. The story of the house, served in order.",
+    image: photos.biryani,
+    imageAlt: "Chicken biryani with mint, cucumber and small bowls of sauce",
+  },
+  {
+    id: "family",
+    name: "Family Celebrations",
+    guests: "4–10 guests",
+    description: "Birthdays, anniversaries, the long Sunday table. Bread keeps arriving. The meal is allowed to take its time.",
+    image: photos.wood,
+    imageAlt: "Steel bowls of curry and a stack of naan on a dark wooden table",
+  },
+  {
+    id: "corporate",
+    name: "Corporate Gatherings",
+    guests: "8–10 guests",
+    description: "A composed room for a conversation that matters. Service stays attentive, and unhurried.",
+    image: photos.brassPot,
+    imageAlt: "A curry in an engraved brass bowl",
+  },
+];
+
+export const testimonials = [
+  {
+    name: "Ananya Sen",
+    city: "Kolkata",
+    occasion: "Anniversary Dinner",
+    quote: "We came for the room and stayed for the quiet. The biryani arrived as if the pot had been waiting for our table.",
+    image: photos.guestAnanya,
+    imageAlt: "Fictional guest portrait for an anniversary dinner at RIWAYAT",
+  },
+  {
+    name: "Kabir Malhotra",
+    city: "Delhi",
+    occasion: "Family Celebration",
+    quote: "Three generations, one long table. The dal tasted like someone had been trusted with the recipe, not given a shortcut.",
+    image: photos.guestKabir,
+    imageAlt: "Fictional guest portrait for a family celebration at RIWAYAT",
+  },
+  {
+    name: "Leela Iyer",
+    city: "Bengaluru",
+    occasion: "Business Dinner",
+    quote: "The service never performed. Courses arrived when the conversation allowed them. It felt like a house, not a booking.",
+    image: photos.guestLeela,
+    imageAlt: "Fictional guest portrait for a business dinner at RIWAYAT",
+  },
+  {
+    name: "Rohan Das",
+    city: "Mumbai",
+    occasion: "Chef's Tasting",
+    quote: "Seven courses, and I could still tell you where each one began. That is rarer than richness.",
+    image: photos.guestRohan,
+    imageAlt: "Fictional guest portrait for a tasting menu at RIWAYAT",
+  },
+];

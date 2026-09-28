@@ -34,7 +34,7 @@ export default function MenuBoard() {
                     key={name}
                     type="button"
                     aria-pressed={selected}
-                    className={`shrink-0 border px-3 py-2 text-[11px] uppercase tracking-[0.14em] transition-colors ${selected ? "border-charcoal bg-charcoal text-ivory" : "border-sand text-brown hover:border-brass hover:text-charcoal"}`}
+                    className={`inline-flex min-h-11 shrink-0 items-center border px-3 py-2 text-[11px] uppercase tracking-[0.14em] transition-colors ${selected ? "border-charcoal bg-charcoal text-ivory" : "border-sand text-brown hover:border-brass hover:text-charcoal"}`}
                     onClick={() => setCategory(name)}
                   >
                     {name}
@@ -46,7 +46,7 @@ export default function MenuBoard() {
           <button
             type="button"
             aria-pressed={vegetarianOnly}
-            className={`shrink-0 self-start border px-3 py-2 text-[11px] uppercase tracking-[0.14em] ${vegetarianOnly ? "border-leaf bg-leaf text-ivory" : "border-sand text-brown"}`}
+            className={`inline-flex min-h-11 shrink-0 items-center self-start border px-3 py-2 text-[11px] uppercase tracking-[0.14em] ${vegetarianOnly ? "border-leaf bg-leaf text-ivory" : "border-sand text-brown"}`}
             onClick={() => setVegetarianOnly((value) => !value)}
           >
             Vegetarian only

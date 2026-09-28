@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Footer from "./Footer.jsx";
@@ -7,9 +7,16 @@ import Navbar from "../navigation/Navbar.jsx";
 export default function Layout() {
   const location = useLocation();
   const reduce = useReducedMotion();
+  const firstView = useRef(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (firstView.current) {
+      firstView.current = false;
+      return;
+    }
+    const main = document.getElementById("main");
+    if (main instanceof HTMLElement) main.focus({ preventScroll: true });
   }, [location.pathname]);
 
   return (
@@ -21,7 +28,7 @@ export default function Layout() {
         Skip to content
       </a>
       <Navbar />
-      <main id="main" className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}
@@ -30,7 +37,9 @@ export default function Layout() {
             exit={reduce ? undefined : { opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Outlet />
+            <Suspense fallback={<div className="min-h-[60vh]" />}>
+              <Outlet />
+            </Suspense>
           </motion.div>
         </AnimatePresence>
       </main>

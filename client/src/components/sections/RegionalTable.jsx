@@ -16,7 +16,7 @@ export default function RegionalTable() {
     <section className="bg-ivory-deep py-20 md:py-28" aria-labelledby="regions-heading">
       <Container>
         <Reveal>
-          <p className="eyebrow">04 — The Regions</p>
+          <p className="eyebrow">06 — The Regions</p>
           <h2 id="regions-heading" className="display mt-4 max-w-3xl text-[clamp(2.6rem,5vw,4.6rem)]">
             A Table Inspired by India
           </h2>
@@ -57,6 +57,7 @@ export default function RegionalTable() {
                   id={`region-tab-${region.id}`}
                   aria-selected={selected}
                   aria-controls="region-panel"
+                  tabIndex={selected ? 0 : -1}
                   className={`flex w-full items-baseline justify-between border-b border-sand py-4 text-left transition-colors ${selected ? "text-charcoal" : "text-brown hover:text-charcoal"}`}
                   onClick={() => setActiveId(region.id)}
                 >
